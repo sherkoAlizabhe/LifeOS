@@ -396,8 +396,23 @@
             }
         }
     </style>
-</head>
-<body class="gradient-bg min-h-screen">
+</head>link rel="manifest" href="manifest.json">
+<link rel="icon" sizes="192x192" href="icon-192.png">
+<link rel="icon" sizes="512x512" href="icon-512.png">
+<meta name="theme-color" content="#ffffff">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+    .then(function(registration) {
+      console.log('Service Worker ثبت شد:', registration.scope);
+    })
+    .catch(function(error) {
+      console.log('Service Worker ثبت نشد:', error);
+    });
+  }
+</script>
+
+navigatoratory div="gradient-bg min-h-screen">
     <!-- Status Bar -->
     <div class="status-bar">
         <div class="status-left">
