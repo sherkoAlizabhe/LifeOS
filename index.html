@@ -396,7 +396,18 @@
             }
         }
     </style>
-</head>link rel="manifest" href="manifest.jssizes
+</head>link rel="manifest" href="manifest.jssizesscript>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('Service Worker ثبت شد با scope:', registration.scope);
+      })
+      .catch(error => {
+        console.log('خطا در ثبت Service Worker:', error);
+      });
+  }
+</script>
+
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
     .then(function(registration) {
